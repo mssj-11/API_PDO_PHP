@@ -32,6 +32,7 @@ class Client {
     }
 
 
+
     /**
      * Crea un nuevo cliente.
      * Método: POST
@@ -86,6 +87,10 @@ class Client {
      * Elimina un cliente por su ID.
      * Método: DELETE
      * Ruta: /delete_client
+     * Datos a enviar en el cuerpo JSON:
+     * {
+     *     "id": "ID del cliente"
+     * }
     */
     public static function delete_client_by_id($id) {
         $db = new Database();
@@ -180,6 +185,10 @@ class Client {
      * Buscar un cliente por su ID.
      * Método: GET
      * Ruta: /search_client
+     * Datos a enviar en el cuerpo JSON:
+     * {
+     *     "id": "ID del cliente"
+     * }
     */
     public static function search_client_by_id($id) {
         $db = new Database();
@@ -199,7 +208,7 @@ class Client {
             } else {
                 // Cliente no encontrado
                 header('HTTP/1.1 404 - Not Found');
-                echo json_encode(['error' => 'Cliente no encontrado']);
+                echo json_encode(['error' => 'Cliente not found']);
             }
         } else {
             // Hubo un error en la consulta
@@ -212,4 +221,5 @@ class Client {
 
 
 }
+
 ?>
