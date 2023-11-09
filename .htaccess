@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^$ index.php [L]
+RewriteRule ^create_client$ crud/create_client.php [L]
+RewriteRule ^all_clients$ crud/get_all_clients.php [L]
+RewriteRule ^update_client$ crud/update_client.php [L]
+RewriteRule ^delete_client$ crud/delete_client.php [L]
+RewriteRule ^search_client$ crud/search_client.php [L]
